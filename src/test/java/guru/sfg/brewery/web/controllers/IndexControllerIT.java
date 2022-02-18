@@ -14,4 +14,11 @@ public class IndexControllerIT extends BaseIT {
         mockMvc.perform(get("/"))
                 .andExpect(status().isOk());
     }
+
+    @Test
+    void testFindBeersPermitAll() throws Exception {
+        mockMvc.perform(get("/beers/find"))
+                .andExpect(status().isOk());
+    }
+
 }
