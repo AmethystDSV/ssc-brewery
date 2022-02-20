@@ -13,13 +13,18 @@ public class PasswordEncodingTests {
     static final String PASSWORD = "password";
 
     @Test
+    void testBcrypt15(){
+        PasswordEncoder bcrypt15 = new BCryptPasswordEncoder(15);
+        System.out.println(bcrypt15.encode("tiger"));
+    }
+
+    @Test
     void testBcrypt(){
         PasswordEncoder bcrypt = new BCryptPasswordEncoder();
         System.out.println(bcrypt.encode(PASSWORD));
         System.out.println(bcrypt.encode(PASSWORD));
         System.out.println(bcrypt.encode("guru"));
     }
-
 
     @Test
     void testSha256(){
